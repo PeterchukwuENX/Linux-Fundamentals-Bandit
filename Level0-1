@@ -1,0 +1,16 @@
+# Level 0 → Level 1
+
+## Concept
+Level 0 is about basic SSH connection and reading a file. The goal 
+is simply to log in and find the password for the next level stored 
+in a file called `readme` in the home directory.
+
+## Commands used
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+cat readme
+
+## Why it works
+`ssh` connects to the remote Bandit server using the given username 
+and port. Once logged in, i used ls to list and `cat` prints the contents of a file directly 
+to the terminal — since the password was stored in plain text in a 
+file called `readme`, `cat`ing it reveals it immediately.
