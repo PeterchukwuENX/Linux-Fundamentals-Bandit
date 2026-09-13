@@ -1,0 +1,15 @@
+# Level 2 → Level 3
+
+## Concept
+This one's about filenames with spaces in them. A space normally tells 
+the shell "new argument starts here," so a filename like 
+`spaces in this filename` looks like three separate arguments unless 
+you tell the shell otherwise.
+
+## Commands used
+cat "./--spaces in this filename--"
+
+## Why it works
+Wrapping the filename in quotes tells the shell to treat the whole thing 
+as one single argument instead of splitting on the spaces. Same job could 
+be done by escaping each space individually with a backslash instead.
