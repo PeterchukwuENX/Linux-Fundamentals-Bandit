@@ -1,0 +1,17 @@
+# Level 3 → Level 4
+
+## Concept
+This level hides the password in a file inside a hidden directory 
+(`inhere`), with a filename designed to trip you up — it starts with 
+three literal dots, which looks almost identical to the `.` and `..` 
+entries `ls -a` always shows, so it's easy to overlook or mistype.
+
+## Commands used
+cat "./...Hiding-From-You"
+
+## Why it works
+The quotes tell the shell to treat the whole filename as one exact 
+string, dots and all, instead of trying to interpret any part of it 
+differently. The `./` explicitly points at the current directory, 
+which removes any ambiguity about where the file lives — useful 
+since the name itself already looks confusing at a glance.
