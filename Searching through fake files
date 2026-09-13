@@ -1,0 +1,18 @@
+# Level 4 → Level 5
+
+## Concept
+This level drops the password into a directory full of decoy files 
+(`-file00` through `-file09` ), where only one is actually 
+the right text — the rest are junk designed to waste your time. 
+The filenames also start with a dash, which is the same shell-parsing 
+trap from level 1: a leading `-` can get mistaken for a command flag.
+
+## Commands used
+cat ./-file07
+
+## Why it works
+The `./` in front of the filename tells the shell explicitly "look in 
+the current directory for this," which prevents `-file07` from being 
+misread as an option flag on the `cat` command. Once that ambiguity is 
+removed, `cat` just prints the file's contents like normal — and that 
+one happened to be the readable file holding the password.
