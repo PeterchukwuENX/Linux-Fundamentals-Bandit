@@ -1,0 +1,18 @@
+# Level 1 → Level 2
+
+## Concept
+This level tests how to read a file with an unusual name — specifically 
+a file named `-` (just a dash). Normally `cat -` would be interpreted by 
+the shell as "read from standard input" rather than "read the file named 
+dash," because a leading `-` is treated as a command flag. The challenge 
+is knowing how to get around that.
+
+## Commands used
+cat < -
+
+## Why it works
+The `<` operator redirects input from a file directly into the command, 
+rather than passing the filename as an argument. Since `cat` normally 
+reads from standard input anyway, feeding it the file's contents via `<` 
+sidesteps the shell trying to interpret `-` as a flag. The file's contents 
+(the password) get printed to the terminal as a result.
