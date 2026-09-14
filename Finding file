@@ -1,0 +1,21 @@
+# Level 5 → Level 6
+
+## Concept
+This level buries the password somewhere inside a big tree of 
+subdirectories (`maybehere00` through `maybehere19`), each containing 
+junk files. i actually did a manual view of directory sizes at first but that was my mistake then i realised that manually opening every folder isn't realistic, so this 
+one's really testing whether you know how to search by file 
+properties instead of just looking around blindly.
+
+## Commands used
+find -size 1033c
+cd maybehere07
+cat ./.file2
+
+## Why it works
+`find -size 1033c` searches the current directory tree for any file 
+that's exactly 1033 bytes — since the target file has a specific known 
+size, this narrows a huge pile of decoys down to one match instantly. 
+Once `find` pointed to the right subdirectory, it was just a matter of 
+moving into it and reading the file, which turned out to be a hidden 
+file itself (starting with a dot).
