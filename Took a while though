@@ -1,0 +1,18 @@
+# Level 6 → Level 7
+
+## Concept
+This one drops you in with almost no lead - just three facts about 
+a file (owner, group, and exact size) and no idea where on the server 
+it actually lives. It's less about a specific command and more about 
+knowing how to search a whole filesystem by properties instead of 
+just looking around folder by folder.
+
+## Commands used
+find / -user bandit7 -group bandit6 -size 33c 
+cat /path/it/found
+
+## Why it works
+find / starts the search from the very top of the filesystem instead 
+of just the current folder. Stacking -user, -group, and -size together 
+means only a file matching all three conditions gets returned, which 
+narrows an entire server down to basically a few files.
