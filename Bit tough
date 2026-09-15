@@ -1,0 +1,19 @@
+Level 8 → Level 9
+
+Concept
+This level gives you a big text file where the password is the one 
+line that appears exactly once - every other line in the file is 
+duplicated. The task is really about knowing how to isolate unique 
+lines out of a huge block of repeated data instead of reading through 
+it manually.
+
+Commands used
+ls
+sort data.txt | uniq -u
+
+Why it works
+sort data.txt arranges every line alphabetically, which puts duplicate 
+lines right next to each other. Piping that into uniq -u then filters 
+the output down to only lines that appear exactly once - since 
+duplicates get grouped together by the sort, uniq -u can spot the one 
+line that has no match next to it. That line is the password.
