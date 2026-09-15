@@ -1,0 +1,21 @@
+Level 11 → Level 12
+
+Concept
+This level uses ROT13, a simple substitution cipher where every letter 
+gets shifted 13 places through the alphabet (so A becomes N, B becomes 
+O, and so on - and because there are 26 letters, shifting by 13 twice 
+gets you back to the original). It's not real encryption, just letter 
+substitution, but if you've never seen it before it looks completely 
+unreadable at first glance.
+
+Commands used
+tr 'A-Za-z' 'N-ZA-Mn-za-m' < data.txt
+
+Why it works
+tr translates one set of characters into another, character by 
+character. The first range (A-Za-z) is "every letter, upper and 
+lowercase." The second range (N-ZA-Mn-za-m) is that same alphabet 
+rotated 13 positions, so each letter gets swapped for the one 13 
+places ahead. Feed the scrambled file in through < and tr rewrites 
+every letter on the way past, which flips the ROT13 text back into 
+plain readable English - password included.
