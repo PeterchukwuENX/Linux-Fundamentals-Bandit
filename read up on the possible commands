@@ -1,0 +1,19 @@
+Level 9 → Level 10
+
+Concept
+This file is mostly garbage/binary data, and the password is buried 
+somewhere in it as one small chunk of actual readable text. Trying to 
+cat or open it directly would just dump a wall of unreadable noise - 
+this level is testing whether you know a tool built specifically for 
+pulling human-readable text out of binary files.
+
+Commands used
+strings data.txt
+
+## Why it works
+strings scans through a file and pulls out any sequence of printable 
+characters, ignoring everything else that isn't readable text. Since 
+the file is mostly binary junk with the password sitting in there as 
+plain text, strings filters out the noise and surfaces just the 
+readable pieces - including the password - without needing to manually 
+sift through raw binary data.
