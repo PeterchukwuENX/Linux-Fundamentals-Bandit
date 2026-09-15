@@ -1,0 +1,21 @@
+Level 7 → Level 8
+
+Concept
+This level gives you a big text file (data.txt) and tells you the 
+password sits on the line next to a specific word ("millionth"). 
+With a file that large, scrolling through manually isn't realistic - 
+it's testing whether you know how to search text content directly 
+instead of opening the whole file.
+
+ Commands used
+pwd
+find /home/bandit7 -name data.txt
+grep millionth data.txt
+
+Why it works
+pwd just confirmed where I was before searching. find /home/bandit7 -name data.txt 
+located the exact file by name rather than guessing a path. grep then 
+searched inside that file for any line containing the word "millionth" 
+and printed just that line - since the password was sitting right next 
+to that word on the same line, grep pulled it straight out without 
+needing to open or scroll through the rest of the file.
