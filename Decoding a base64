@@ -1,0 +1,18 @@
+Level 10 → Level 11
+
+Concept
+This one hands you the password encoded in Base64 instead of plain 
+text. Base64 isn't encryption — it's just a way of representing data 
+using a fixed set of readable characters, commonly used to safely 
+transmit binary-ish data as text. The level is testing whether you 
+know how to decode it back to its original form.
+
+Commands used
+cat data.txt
+echo "<base64 string from data.txt>" | base64 -d
+
+Why it works
+cat data.txt just revealed the encoded string. Piping that string into 
+base64 -d reverses the encoding — the -d flag tells the base64 command 
+to decode rather than encode — converting it back into the original 
+readable password.
